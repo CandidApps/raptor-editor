@@ -51,31 +51,31 @@
     /* Error */
     .raptor-message-circle-close {
         /* Red */
-        @include background(linear-gradient(top, #ff5d4b, #fa1c1c));
+        @include state-error;
     }
 
     /* Confirm */
     .raptor-message-circle-check {
         /* Green */
-        @include background(linear-gradient(top, #cdeb8e, #a5c956));
+        @include state-confirmation;
     }
 
     /* Information */
     .raptor-message-info {
         /* Blue */
-        @include background(linear-gradient(top, #a9e4f7, #0fb4e7));
+        @include state-information;
     }
 
     /* Warning */
     .raptor-message-alert {
         /* Yellow */
-        @include background(linear-gradient(top, #ffd65e, #febf04));
+        @include state-warning;
     }
 
     /* Loading */
     .raptor-message-clock {
-        /* Purple */
-        @include background(linear-gradient(top, #fb83fa, #e93cec));
+        /* dark */
+        @include state-contrast;
     }
 
     .raptor-message-clock .ui-icon.ui-icon-clock {

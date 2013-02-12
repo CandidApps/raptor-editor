@@ -28,7 +28,7 @@
  * Dialog docked to body
  */
 .raptor-dock-docked {
-    z-index: 10000;
+    z-index: 1800;
     .raptor-toolbar-wrapper {
         @include display-box();
         @include box-pack(center);

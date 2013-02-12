@@ -2,6 +2,13 @@
 @import 'variables';
 @import 'mixins';
 
+/* Theme dependancies */
+@import 'pan/variables';
+@import 'pan/extensions';
+
+/* Theme states */
+@import 'pan/state/all';
+
 /* Base style */
 @import 'layout';
 @import 'style';

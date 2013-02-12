@@ -9,17 +9,52 @@
 
 .raptor-ui-color-menu-basic-menu span {
     padding-left: 2px;
+    text-shadow: inherit;
 }
 
 .raptor-ui-color-menu-basic-swatch {
-    width: 16px;
-    height: 16px;
+    width: $icon-size;
+    height: $icon-size;
     float: left;
-    margin-top: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 2px ($padding / 4) 0 0;
+    border: $border-width $border-style darken($default-border-color, $contrast);
+    @include box-shadow($shadow-x $shadow-y $shadow-blur $shadow-spread $default-start-color);
+    @include border-radius($border-radius / 2);
 }
 
-.raptor-ui-color-menu-basic .ui-icon-swatch {
-    background-image: none;
-    border: 1px solid rgba(0, 0, 0, 0.35);
+.raptor-ui-color-menu-basic-menu li {
+    cursor: pointer;
+    display: block;
 }
+
+%hover-swatch {
+    .raptor-ui-color-menu-basic-swatch {
+        border-color: $hover-border-color;
+        @include box-shadow($shadow-x $shadow-y $shadow-blur $shadow-spread $hover-start-color);
+    }
+}
+
+.raptor-ui-color-menu-basic-menu a {
+    &.ui-state-focus  {
+        @extend %hover-swatch;
+    }
+}
+
+.raptor-ui-color-menu-basic {
+    .ui-icon-swatch {
+        background-image: none;
+    }
+    &.ui-state-hover {
+        @extend %hover-swatch;
+    }
+    &.ui-state-active {
+        .raptor-ui-color-menu-basic-swatch {
+            border-color: $active-border-color;
+            @include box-shadow($shadow-x $shadow-y $shadow-blur $shadow-spread $active-start-color);
+        }
+    }
+    .raptor-ui-color-menu-basic-swatch {
+        margin: -2px ($padding / 2) 0 (-$padding / 2);
+    }
+}
+

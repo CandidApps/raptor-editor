@@ -10,26 +10,23 @@
     float: left;
 }
 
+.raptor-toolbar-wrapper {
+    @extend %state-default-reversed;
+}
+
 .raptor-layout-toolbar-group .ui-button {
-    padding: 0;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 3px;
-    height: 32px;
+    margin: 0 -1px 0 0;
     float: left;
     @include border-radius(0);
     @include box-sizing(border-box);
-}
 
-.raptor-layout-toolbar-group .ui-button-icon-only {
-    width: 32px;
+    &:last-child { margin-right: 0; }
 }
 
 .raptor-layout-toolbar-group .ui-button:first-child {
-    @include border-left-radius(5px);
+    @include border-left-radius($border-radius);
 }
 
 .raptor-layout-toolbar-group .ui-button:last-child {
-    margin-right: 2px;
-    @include border-right-radius(5px);
+    @include border-right-radius($border-radius);
 }

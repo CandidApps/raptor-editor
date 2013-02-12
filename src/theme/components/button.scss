@@ -6,28 +6,21 @@
 @import 'compass/css3/border-radius';
 @import 'compass/css3/box-sizing';
 
-.raptor-buttonset {
+.raptor-layout-toolbar-group {
     float: left;
-    margin: 0 5px 4px 0;
+    margin: 0 ($padding / 2) ($padding / 2) 0;
     display: inline-block;
 
-    > .ui-button {
+    .ui-button {
         float: left;
         display: block;
         margin: 0 -1px 0 0;
         font-size: $font-size;
-    }
+        z-index: 0;
 
-    .ui-button:hover {
-        z-index: 1;
-    }
+        &:hover { z-index: 1; }
 
-    .raptor-selectmenu {
-        display: block;
-
-        .ui-button {
-            margin: 0 -1px 0 0;
-        }
+        &:last-child { margin-right: 0; }
     }
 }
 
@@ -42,20 +35,17 @@
             @include border-radius(0);
 
             &:first-child {
-                @include border-top-left-radius();
-                @include border-bottom-left-radius();
+                @include border-top-left-radius($border-radius);
+                @include border-bottom-left-radius($border-radius);
             }
             &:last-child {
-                @include border-top-right-radius();
-                @include border-bottom-right-radius();
+                @include border-top-right-radius($border-radius);
+                @include border-bottom-right-radius($border-radius);
             }
         }
-    }
-    .ui-button-text {
-        padding-top: 6px;
     }
 }
 
 .ui-button-icon-only .ui-button-text {
-    // display: none;
+    display: none;
 }
